@@ -1,0 +1,53 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "bash@5.2-p15": {
+      "last_modified": "2023-09-04T16:24:30Z",
+      "resolved": "github:NixOS/nixpkgs/3c15feef7770eb5500a4b8792623e2d6f598c9c1#bash",
+      "source": "devbox-search",
+      "version": "5.2-p15"
+    },
+    "coreutils@9.3": {
+      "last_modified": "2023-09-04T16:24:30Z",
+      "resolved": "github:NixOS/nixpkgs/3c15feef7770eb5500a4b8792623e2d6f598c9c1#coreutils",
+      "source": "devbox-search",
+      "version": "9.3"
+    },
+    "gawk@5.2.2": {
+      "last_modified": "2023-09-04T16:24:30Z",
+      "resolved": "github:NixOS/nixpkgs/3c15feef7770eb5500a4b8792623e2d6f598c9c1#gawk",
+      "source": "devbox-search",
+      "version": "5.2.2"
+    },
+    "gnugrep@3.11": {
+      "last_modified": "2023-09-04T16:24:30Z",
+      "resolved": "github:NixOS/nixpkgs/3c15feef7770eb5500a4b8792623e2d6f598c9c1#gnugrep",
+      "source": "devbox-search",
+      "version": "3.11"
+    },
+    "gnupg@2.4.1": {
+      "last_modified": "2023-09-04T16:24:30Z",
+      "resolved": "github:NixOS/nixpkgs/3c15feef7770eb5500a4b8792623e2d6f598c9c1#gnupg",
+      "source": "devbox-search",
+      "version": "2.4.1"
+    },
+    "keybase@6.0.2": {
+      "last_modified": "2023-09-04T16:24:30Z",
+      "resolved": "github:NixOS/nixpkgs/3c15feef7770eb5500a4b8792623e2d6f598c9c1#keybase",
+      "source": "devbox-search",
+      "version": "6.0.2"
+    },
+    "rtx@2023.8.2": {
+      "last_modified": "2023-09-04T16:24:30Z",
+      "resolved": "github:NixOS/nixpkgs/3c15feef7770eb5500a4b8792623e2d6f598c9c1#rtx",
+      "source": "devbox-search",
+      "version": "2023.8.2"
+    },
+    "yubikey-manager@5.2.0": {
+      "last_modified": "2023-09-04T16:24:30Z",
+      "resolved": "github:NixOS/nixpkgs/3c15feef7770eb5500a4b8792623e2d6f598c9c1#yubikey-manager",
+      "source": "devbox-search",
+      "version": "5.2.0"
+    }
+  }
+}

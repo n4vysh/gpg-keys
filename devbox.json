@@ -1,0 +1,22 @@
+{
+  "packages": [
+    "gnupg@2.4.1",
+    "bash@5.2-p15",
+    "coreutils@9.3",
+    "gawk@5.2.2",
+    "gnugrep@3.11",
+    "rtx@2023.8.2",
+    "yubikey-manager@5.2.0",
+    "keybase@6.0.2"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
