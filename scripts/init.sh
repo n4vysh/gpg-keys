@@ -1,5 +1,5 @@
 #!/bin/sh
 
 devbox install
-rtx install
+rtx install -yj "$(nproc)"
 direnv allow .
