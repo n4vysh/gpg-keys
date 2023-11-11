@@ -4,12 +4,12 @@ My personal setup guide for [GPG][gpg-link] and Security Key.
 After setup the following [ECC][ecc-link] keys
 and revocation certificate will be created.
 
-Key     | Algorithm       | Capability
-:-      | :-              | :-
-primary | EdDSA - ed25519 | Sign + Certify
-sub     | EdDSA - ed25519 | Sign
-sub     | EdDSA - ed25519 | Authentication
-sub     | ECDH  - cv25519 | Encrypt
+| Key     | Algorithm       | Capability     |
+| :------ | :-------------- | :------------- |
+| primary | EdDSA - ed25519 | Sign + Certify |
+| sub     | EdDSA - ed25519 | Sign           |
+| sub     | EdDSA - ed25519 | Authentication |
+| sub     | ECDH - cv25519  | Encrypt        |
 
 Expiration date of keys is 1 year.
 Public key deployed following location.
@@ -104,9 +104,9 @@ to store hash instead of plain text when entering th PIN.
 Next, set User PIN, Admin PIN, and Reset Code.
 The default values of [PIN][default-pin-link] are following.
 
-Default User PIN | Default Admin PIN
-:-               | :-
-`123456`         | `12345678`
+| Default User PIN | Default Admin PIN |
+| :--------------- | :---------------- |
+| `123456`         | `12345678`        |
 
 [default-pin-link]: https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP
 
@@ -340,3 +340,10 @@ just import
 If PIN retry counter reached 0 and can't unblock Admin PIN, follow [support page][support-page-link].
 
 [support-page-link]: https://support.yubico.com/hc/en-us/articles/360013761339-Resetting-the-OpenPGP-Applet-on-the-YubiKey
+
+## License
+
+This project distributed under the [Unlicense][unlicense-link].
+See the [UNLICENSE](./UNLICENSE) file for details.
+
+[unlicense-link]: https://choosealicense.com/licenses/unlicense/
