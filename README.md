@@ -23,7 +23,7 @@ Public key deployed following location.
 
 ## Requirement
 
-- [devbox][devbox-link] ~> 0.5
+- [devbox][devbox-link] ~> 0.8
 - [rtx][rtx-link]
 - Security Key ([YubiKey 5][yubikey-5-link])
 
