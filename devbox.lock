@@ -37,11 +37,53 @@
       "source": "devbox-search",
       "version": "6.0.2"
     },
-    "rtx@2023.8.2": {
-      "last_modified": "2023-09-04T16:24:30Z",
-      "resolved": "github:NixOS/nixpkgs/3c15feef7770eb5500a4b8792623e2d6f598c9c1#rtx",
+    "mise@2024.5.9": {
+      "last_modified": "2024-08-14T11:41:26Z",
+      "resolved": "github:NixOS/nixpkgs/0cb2fd7c59fed0cd82ef858cbcbdb552b9a33465#mise",
       "source": "devbox-search",
-      "version": "2023.8.2"
+      "version": "2024.5.9",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/sm32p12cjhfpky12ff6xfqy0wd4hkymc-mise-2024.5.9",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/sm32p12cjhfpky12ff6xfqy0wd4hkymc-mise-2024.5.9"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/cqkl47jzqsis0zardkxxxmll40jgrnz2-mise-2024.5.9",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/cqkl47jzqsis0zardkxxxmll40jgrnz2-mise-2024.5.9"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vbbqp5zwwgs60df67l778qq11m12pnad-mise-2024.5.9",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/vbbqp5zwwgs60df67l778qq11m12pnad-mise-2024.5.9"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/agwfy7b34i900k8jqs4vaw9ms0srjidi-mise-2024.5.9",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/agwfy7b34i900k8jqs4vaw9ms0srjidi-mise-2024.5.9"
+        }
+      }
     },
     "yubikey-manager@5.2.0": {
       "last_modified": "2023-09-04T16:24:30Z",

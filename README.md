@@ -24,15 +24,15 @@ Public key deployed following location.
 ## Requirement
 
 - [devbox][devbox-link] ~> 0.8
-- [rtx][rtx-link]
+- [mise][mise-link]
 - [1Password CLI][op-link]
-  - Don't use rtx to avoid connection error
+  - Don't use mise to avoid connection error
 - Security Key ([YubiKey 5][yubikey-5-link])
 
-Run `./scripts/init.sh` to install tools with devbox and rtx.
+Run `./scripts/init.sh` to install tools with devbox and mise.
 
 [devbox-link]: https://www.jetpack.io/devbox/
-[rtx-link]: https://github.com/jdx/rtx
+[mise-link]: https://github.com/jdx/mise
 [op-link]: https://developer.1password.com/docs/cli/get-started/
 [yubikey-5-link]: https://www.yubico.com/products/yubikey-5-overview/
 
