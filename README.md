@@ -25,12 +25,15 @@ Public key deployed following location.
 
 - [devbox][devbox-link] ~> 0.8
 - [rtx][rtx-link]
+- [1Password CLI][op-link]
+  - Don't use rtx to avoid connection error
 - Security Key ([YubiKey 5][yubikey-5-link])
 
 Run `./scripts/init.sh` to install tools with devbox and rtx.
 
 [devbox-link]: https://www.jetpack.io/devbox/
 [rtx-link]: https://github.com/jdx/rtx
+[op-link]: https://developer.1password.com/docs/cli/get-started/
 [yubikey-5-link]: https://www.yubico.com/products/yubikey-5-overview/
 
 ## Usage
