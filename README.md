@@ -295,6 +295,12 @@ but has a reference to it.
 
 ### Extend the expiration date
 
+Download secret keys from 1Password Vault and run following.
+
+```bash
+just import-secret-keys
+```
+
 ```bash
 just edit-key
 ```

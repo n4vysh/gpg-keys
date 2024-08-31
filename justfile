@@ -17,6 +17,11 @@ import:
         ~/Downloads/gpg_private_sub_key.asc \
         ~/Downloads/gpg_revcert.asc
 
+import-secret-keys:
+    gpg --import \
+        ~/Downloads/gpg_private_primary_key.asc \
+        ~/Downloads/gpg_private_sub_key.asc
+
 get-keyid *opt:
     @./scripts/get-keyid.bash "{{ gpg_id }}" "{{ opt }}"
 
