@@ -1,7 +1,17 @@
 min_version = '2025.9.7'
 
 [tools]
+editorconfig-checker = "3.4.0"
 gh = '2.79.0'
+lefthook = "1.13.0"
+markdownlint-cli2 = "0.18.1"
+prettier = "3.6.2"
+shellcheck = "0.11.0"
+shfmt = "3.12.0"
+taplo = "0.10.0"
+typos = "1.36.2"
+yamlfmt = "0.17.2"
+yamllint = "1.37.1"
 
 [env]
 DO_NOT_TRACK = '1'

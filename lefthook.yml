@@ -1,0 +1,42 @@
+pre-commit:
+  parallel: true
+  commands:
+    # global
+    editorconfig-checker:
+      file_types: [text]
+      run: editorconfig-checker {staged_files}
+    typos:
+      file_types: [text]
+      run: typos {staged_files}
+    # YAML
+    yamlfmt:
+      glob: "*.{yaml,yml}"
+      run: yamlfmt {staged_files}
+      stage_fixed: true
+    yamllint:
+      glob: "*.{yaml,yml}"
+      run: yamllint {staged_files}
+    # shell
+    shfmt:
+      glob: "*.{sh,bash}"
+      run: shfmt -w {staged_files}
+      stage_fixed: true
+    shellcheck:
+      glob: "*.{sh,bash}"
+      run: shellcheck {staged_files}
+    # markdown
+    prettier-markdown:
+      glob: "*.md"
+      run: prettier -w {staged_files}
+      stage_fixed: true
+    markdownlint:
+      glob: "*.md"
+      run: markdownlint-cli2 {staged_files}
+    # toml
+    taplo-fmt:
+      glob: "*.toml"
+      run: taplo fmt {staged_files}
+      stage_fixed: true
+    taplo-lint:
+      glob: "*.toml"
+      run: taplo lint {staged_files}
