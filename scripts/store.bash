@@ -36,14 +36,14 @@ if ! (op item list --vault "$vault" |
 		--vault "$vault" \
 		--category 'Secure Note' \
 		--title "$title" \
-		"$date.gpg_public_key\.asc[file]"=<(just export --armor) \
+		"$date.gpg_public_key\.asc[file]"=<(mise run -q export-armor) \
 		"$date.gpg_private_primary_key\.asc[file]"=<(gpg --armor --export-secret-keys "$id") \
 		"$date.gpg_private_sub_key\.asc[file]"=<(gpg --armor --export-secret-subkeys "$id")
 else
 	op item edit \
 		--vault "$vault" \
 		"$title" \
-		"$date.gpg_public_key\.asc[file]"=<(just export --armor) \
+		"$date.gpg_public_key\.asc[file]"=<(mise run -q export-armor) \
 		"$date.gpg_private_primary_key\.asc[file]"=<(gpg --armor --export-secret-keys "$id") \
 		"$date.gpg_private_sub_key\.asc[file]"=<(gpg --armor --export-secret-subkeys "$id")
 fi

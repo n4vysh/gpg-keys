@@ -1,5 +1,4 @@
 #!/bin/sh
 
-devbox install
+mise trust
 mise install -yj "$(nproc)"
-direnv allow .

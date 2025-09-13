@@ -1,0 +1,67 @@
+min_version = '2025.9.7'
+
+[tools]
+gh = '2.79.0'
+
+[env]
+DO_NOT_TRACK = '1'
+
+[vars]
+gpg_id = 'n4vysh'
+
+[tasks.list]
+description = 'List GPG keys'
+run = [
+  'gpg --list-keys {{vars.gpg_id}}',
+  'gpg --list-secret-keys --keyid-format=long {{vars.gpg_id}}',
+]
+
+[tasks.generate]
+description = 'Generate GPG keys'
+run = './scripts/generate.bash {{vars.gpg_id}}'
+
+[tasks.store]
+description = 'Store GPG keys'
+run = './scripts/store.bash {{vars.gpg_id}}'
+
+[tasks.import]
+description = 'Import all keys of GPG'
+run = '''
+  gpg --import \
+    ~/Downloads/gpg_public_key.asc \
+    ~/Downloads/gpg_private_primary_key.asc \
+    ~/Downloads/gpg_private_sub_key.asc \
+    ~/Downloads/gpg_revcert.asc
+'''
+
+[tasks.import-secret-keys]
+description = 'Import secret keys of GPG'
+run = '''
+  gpg --import \
+    ~/Downloads/gpg_private_primary_key.asc \
+    ~/Downloads/gpg_private_sub_key.asc
+'''
+
+[tasks.get-keyid]
+description = 'Get key id of GPG'
+run = './scripts/get-keyid.bash {{vars.gpg_id}} {{arg(name="type")}}'
+
+[tasks.edit-card]
+description = 'Edit GPG card'
+run = 'gpg --edit-card'
+
+[tasks.edit-key]
+description = 'Edit GPG key'
+run = 'gpg --edit-key "{{vars.gpg_id}}"'
+
+[tasks.export]
+description = 'Export GPG keys'
+run = 'gpg --export "{{vars.gpg_id}}"'
+
+[tasks.export-armor]
+description = 'Export armored output of GPG keys'
+run = 'gpg --armor --export "{{vars.gpg_id}}"'
+
+[tasks.delete]
+description = 'Delete GPG keys'
+run = './scripts/delete.bash "{{vars.gpg_id}}"'

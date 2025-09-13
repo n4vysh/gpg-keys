@@ -22,23 +22,23 @@ Public key deployed following location.
 
 ## Requirement
 
-- [devbox][devbox-link] ~> 0.8
-- [mise][mise-link]
-- [1Password CLI][op-link]
-  - Don't use mise to avoid connection error
+- [mise][mise-link] ~> v2025.9.9
+- [op][op-link]
+    - Don't use mise to avoid connection error
+- [ykman][ykman-link]
 - Security Key ([YubiKey 5][yubikey-5-link])
 
 Run `./scripts/init.sh` to install tools with devbox and mise.
 
-[devbox-link]: https://www.jetpack.io/devbox/
 [mise-link]: https://github.com/jdx/mise
 [op-link]: https://developer.1password.com/docs/cli/get-started/
+[ykman-link]: https://github.com/Yubico/yubikey-manager
 [yubikey-5-link]: https://www.yubico.com/products/yubikey-5-overview/
 
 ## Usage
 
-Generate primary key, sub keys, and revocation certificate with `just generate`.
-List generated keys with `just list`.
+Generate primary key, sub keys, and revocation certificate with `mise run generate`.
+List generated keys with `mise run list`.
 `sec` means primary key.
 `ssb` means sub key.
 
@@ -47,7 +47,7 @@ List generated keys with `just list`.
 Add new uid for email address and revoke old uid.
 
 ```bash
-just edit-key
+mise run edit-key
 ```
 
 ```txt
@@ -96,7 +96,7 @@ gpg> save
 Store primary key, sub key, and revocation certificate to 1Password vault.
 
 ```bash
-just store
+mise run store
 ```
 
 ### Set PIN and Reset Code of security key
@@ -115,7 +115,7 @@ The default values of [PIN][default-pin-link] are following.
 Finally, Store new values of PIN and Reset Code to 1Password vault manually.
 
 ```bash
-just edit-card
+mise run edit-card
 ```
 
 ```txt
@@ -168,8 +168,8 @@ Set PIN retry counters to: 5 5 5? [y/N]: y
 Register GPG public key to server and set URL to security key.
 
 ```bash
-just export | curl -T - https://keys.openpgp.org
-just edit-card
+mise run export | curl -T - https://keys.openpgp.org
+mise run edit-card
 ```
 
 ```txt
@@ -185,7 +185,7 @@ Move keys to security key.
 **Quit without save** to setup secondary key.
 
 ```bash
-just edit-key
+mise run edit-key
 ```
 
 ```txt
@@ -236,13 +236,13 @@ gpg: KEYTOCARD failed: Unusable secret key
 ### Set GPG signing key in Git
 
 ```bash
-git config --global user.signingkey $(just get-keyid sign)
+git config --global user.signingkey $(mise run -q get-keyid sign)
 ```
 
 ### Register GPG public key to GitHub
 
 ```bash
-gh gpg-key add <(just export --armor)
+gh gpg-key add <(mise run -q export-armor)
 ```
 
 ### Cleanup
@@ -251,7 +251,7 @@ gh gpg-key add <(just export --armor)
 and secret keys from the GPG keyring.
 
 ```bash
-just delete
+mise run delete
 ```
 
 ### Use security key in multiple hosts
@@ -278,7 +278,7 @@ gpg> quit
 ```
 
 ```bash
-just list
+mise run list
 ```
 
 If `sec#` and `ssb>` displayed, it is success.
@@ -291,11 +291,11 @@ but has a reference to it.
 Download secret keys from 1Password Vault and run following.
 
 ```bash
-just import-secret-keys
+mise run import-secret-keys
 ```
 
 ```bash
-just edit-key
+mise run edit-key
 ```
 
 ```txt
@@ -323,7 +323,7 @@ gpg> save
 Store 1Password vault after extend the expiration date.
 
 ```bash
-just store
+mise run store
 ```
 
 ### Import from backup
@@ -331,7 +331,7 @@ just store
 Download keys and revocation certificate from 1Password Vault and run following.
 
 ```bash
-just import
+mise run import
 ```
 
 ### Reset GPG keys in security key
