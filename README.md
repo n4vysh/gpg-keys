@@ -15,7 +15,6 @@ Expiration date of keys is 1 year.
 Public key deployed following location.
 
 - <https://keys.openpgp.org>
-- <https://keybase.io/n4vysh>
 - <https://github.com/n4vysh.gpg>
 
 [gpg-link]: https://wiki.gnupg.org/Index
@@ -245,15 +244,6 @@ git config --global user.signingkey $(just get-keyid sign)
 ```bash
 gh gpg-key add <(just export --armor)
 ```
-
-### Register GPG public key to [Keybase][keybase-link]
-
-```bash
-keybase login
-keybase pgp select
-```
-
-[keybase-link]: https://keybase.io/
 
 ### Cleanup
 
