@@ -38,14 +38,12 @@ if ! (op item list --vault "$vault" |
 		--title "$title" \
 		"$date.gpg_public_key\.asc[file]"=<(just export --armor) \
 		"$date.gpg_private_primary_key\.asc[file]"=<(gpg --armor --export-secret-keys "$id") \
-		"$date.gpg_private_sub_key\.asc[file]"=<(gpg --armor --export-secret-subkeys "$id") \
-		"$date.gpg_revcert\.asc[file]"=<(cat "$HOME/.gnupg/openpgp-revocs.d/$fpr.rev")
+		"$date.gpg_private_sub_key\.asc[file]"=<(gpg --armor --export-secret-subkeys "$id")
 else
 	op item edit \
 		--vault "$vault" \
 		"$title" \
 		"$date.gpg_public_key\.asc[file]"=<(just export --armor) \
 		"$date.gpg_private_primary_key\.asc[file]"=<(gpg --armor --export-secret-keys "$id") \
-		"$date.gpg_private_sub_key\.asc[file]"=<(gpg --armor --export-secret-subkeys "$id") \
-		"$date.gpg_revcert\.asc[file]"=<(cat "$HOME/.gnupg/openpgp-revocs.d/$fpr.rev")
+		"$date.gpg_private_sub_key\.asc[file]"=<(gpg --armor --export-secret-subkeys "$id")
 fi
