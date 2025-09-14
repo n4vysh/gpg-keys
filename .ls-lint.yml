@@ -1,0 +1,6 @@
+ls:
+  ".*": kebab-case
+  ".*.*": kebab-case
+
+ignore:
+  - README.md

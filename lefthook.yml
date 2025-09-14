@@ -8,6 +8,9 @@ pre-commit:
     typos:
       file_types: [text]
       run: typos {staged_files}
+    ls-lint:
+      file_types: [text]
+      run: ls-lint {staged_files}
     # YAML
     yamlfmt:
       glob: "*.{yaml,yml}"
