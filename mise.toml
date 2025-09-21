@@ -22,10 +22,12 @@ gpg_id = 'n4vysh'
 
 [tasks.list]
 description = 'List GPG keys'
-run = [
-  'gpg --list-keys {{vars.gpg_id}}',
-  'gpg --list-secret-keys --keyid-format=long {{vars.gpg_id}}',
-]
+run = '''
+  #!/bin/bash -x
+
+  gpg --list-keys {{vars.gpg_id}}
+  gpg --list-secret-keys --keyid-format=long {{vars.gpg_id}}
+'''
 
 [tasks.generate]
 description = 'Generate GPG keys'
@@ -38,6 +40,8 @@ run = './scripts/store.bash {{vars.gpg_id}}'
 [tasks.import]
 description = 'Import all keys of GPG'
 run = '''
+  #!/bin/bash -x
+
   gpg --import \
     ~/Downloads/gpg_public_key.asc \
     ~/Downloads/gpg_private_primary_key.asc \
@@ -48,6 +52,8 @@ run = '''
 [tasks.import-secret-keys]
 description = 'Import secret keys of GPG'
 run = '''
+  #!/bin/bash -x
+
   gpg --import \
     ~/Downloads/gpg_private_primary_key.asc \
     ~/Downloads/gpg_private_sub_key.asc
